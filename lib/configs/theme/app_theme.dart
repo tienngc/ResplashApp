@@ -31,25 +31,12 @@ class AppTheme {
         elevation: 0,
       ),
       bottomAppBarTheme: BottomAppBarTheme(
-        color: colors['surface']!,
+        color: colors['bottomAppBarColor']!,
         elevation: 0,
       ),
       floatingActionButtonTheme: FloatingActionButtonThemeData(
         backgroundColor: colors['secondary']!,
         foregroundColor: colors['onSecondary']!,
-      ),
-      navigationBarTheme: NavigationBarThemeData(
-        backgroundColor: colors['surface']!,
-        indicatorColor: colors['primaryVariant']!.withValues(alpha: 0.12),
-        labelTextStyle: WidgetStateProperty.resolveWith(
-          (states) => TextStyle(
-            color: states.contains(WidgetState.selected)
-                ? colors['primary']!
-                : colors['onSurfaceSecondary']!,
-            fontSize: 12,
-            fontWeight: FontWeight.w500,
-          ),
-        ),
       ),
       tabBarTheme: TabBarTheme(
         labelColor: colors['primary']!,
@@ -92,25 +79,12 @@ class AppTheme {
         elevation: 0,
       ),
       bottomAppBarTheme: BottomAppBarTheme(
-        color: colors['surface']!,
+        color: colors['bottomAppBarColor']!,
         elevation: 0,
       ),
       floatingActionButtonTheme: FloatingActionButtonThemeData(
         backgroundColor: colors['secondary']!,
         foregroundColor: colors['onSecondary']!,
-      ),
-      navigationBarTheme: NavigationBarThemeData(
-        backgroundColor: colors['surface']!,
-        indicatorColor: colors['primaryVariant']!.withValues(alpha: 0.12),
-        labelTextStyle: WidgetStateProperty.resolveWith(
-          (states) => TextStyle(
-            color: states.contains(WidgetState.selected)
-                ? colors['primary']!
-                : colors['onSurfaceSecondary']!,
-            fontSize: 12,
-            fontWeight: FontWeight.w500,
-          ),
-        ),
       ),
       tabBarTheme: TabBarTheme(
         labelColor: colors['primary']!,
