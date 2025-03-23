@@ -1,7 +1,7 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:get_it/get_it.dart';
 
-import 'dio/app_dio.dart';
+import '../dio/app_dio.dart';
 
 final GetIt getIt = GetIt.instance;
 
