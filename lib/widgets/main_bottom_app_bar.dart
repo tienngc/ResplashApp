@@ -5,7 +5,6 @@ class MainBottomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return BottomAppBar(
       notchMargin: 8,
       clipBehavior: Clip.antiAlias,
@@ -47,14 +46,8 @@ class MainBottomAppBar extends StatelessWidget {
                     ),
                     Row(
                       children: [
-                        IconButton(
-                          onPressed: () {},
-                          icon: Icon(Icons.search),
-                        ),
-                        IconButton(
-                          onPressed: () {},
-                          icon: Icon(Icons.sort),
-                        ),
+                        IconButton(onPressed: () {}, icon: Icon(Icons.search)),
+                        IconButton(onPressed: () {}, icon: Icon(Icons.sort)),
                       ],
                     ),
                   ],
