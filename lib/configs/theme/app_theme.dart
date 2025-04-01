@@ -30,14 +30,8 @@ class AppTheme {
         foregroundColor: colors['onSurface']!,
         elevation: 0,
       ),
-      bottomAppBarTheme: BottomAppBarTheme(
-        color: colors['bottomAppBarColor']!,
-        elevation: 0,
-      ),
-      floatingActionButtonTheme: FloatingActionButtonThemeData(
-        backgroundColor: colors['secondary']!,
-        foregroundColor: colors['onSecondary']!,
-      ),
+      bottomAppBarTheme: BottomAppBarTheme(color: colors['bottomAppBarColor']!, elevation: 0),
+      floatingActionButtonTheme: FloatingActionButtonThemeData(backgroundColor: colors['secondary']!, foregroundColor: colors['onSecondary']!),
       tabBarTheme: TabBarTheme(
         labelColor: colors['primary']!,
         unselectedLabelColor: colors['onSurfaceSecondary']!,
@@ -78,14 +72,8 @@ class AppTheme {
         foregroundColor: colors['onSurface']!,
         elevation: 0,
       ),
-      bottomAppBarTheme: BottomAppBarTheme(
-        color: colors['bottomAppBarColor']!,
-        elevation: 0,
-      ),
-      floatingActionButtonTheme: FloatingActionButtonThemeData(
-        backgroundColor: colors['secondary']!,
-        foregroundColor: colors['onSecondary']!,
-      ),
+      bottomAppBarTheme: BottomAppBarTheme(color: colors['bottomAppBarColor']!, elevation: 0),
+      floatingActionButtonTheme: FloatingActionButtonThemeData(backgroundColor: colors['secondary']!, foregroundColor: colors['onSecondary']!),
       tabBarTheme: TabBarTheme(
         labelColor: colors['primary']!,
         unselectedLabelColor: colors['onSurfaceSecondary']!,
@@ -129,4 +117,4 @@ class AppTheme {
       ),
     );
   }
-} 
+}

@@ -34,4 +34,4 @@ class AppColors {
     'immersiveSysUi': Color(0x33000000),
     'bottomAppBarColor': Color(0xFF1A1A1A),
   };
-} 
+}

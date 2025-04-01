@@ -10,7 +10,5 @@ Future<void> setupServiceLocator() async {
   getIt.registerLazySingleton<Connectivity>(() => Connectivity());
 
   // Register UnsplashDio as singleton
-  getIt.registerLazySingleton<UnsplashDio>(
-    () => UnsplashDio(connectivity: getIt<Connectivity>()),
-  );
-} 
+  getIt.registerLazySingleton<UnsplashDio>(() => UnsplashDio(connectivity: getIt<Connectivity>()));
+}

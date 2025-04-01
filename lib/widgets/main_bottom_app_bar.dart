@@ -16,10 +16,7 @@ class MainBottomAppBar extends StatelessWidget {
           Container(
             decoration: const BoxDecoration(
               gradient: LinearGradient(
-                colors: [
-                  Color.fromRGBO(50, 50, 50, 0.1),
-                  Color.fromRGBO(50, 50, 50, 0.3),
-                ],
+                colors: [Color.fromRGBO(50, 50, 50, 0.1), Color.fromRGBO(50, 50, 50, 0.3)],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
               ),
@@ -36,20 +33,8 @@ class MainBottomAppBar extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Row(
-                      children: [
-                        IconButton(
-                          onPressed: () {},
-                          icon: Icon(Icons.menu_outlined),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        IconButton(onPressed: () {}, icon: Icon(Icons.search)),
-                        IconButton(onPressed: () {}, icon: Icon(Icons.sort)),
-                      ],
-                    ),
+                    Row(children: [IconButton(onPressed: () {}, icon: Icon(Icons.menu_outlined))]),
+                    Row(children: [IconButton(onPressed: () {}, icon: Icon(Icons.search)), IconButton(onPressed: () {}, icon: Icon(Icons.sort))]),
                   ],
                 ),
               ),
