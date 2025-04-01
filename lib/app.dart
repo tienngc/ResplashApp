@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:resplash/configs/theme/app_theme.dart';
+import 'package:resplash/utils/ui_utils.dart';
 import 'package:resplash/widgets/main_bottom_app_bar.dart';
 
 class App extends StatelessWidget {
@@ -7,6 +8,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    UiUtils.updateSystemUi(context);
     return MaterialApp(
       title: 'Resplash',
       theme: AppTheme.lightTheme(),
