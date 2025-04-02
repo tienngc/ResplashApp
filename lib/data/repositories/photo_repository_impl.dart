@@ -1,5 +1,3 @@
-import 'dart:convert';
-import 'package:http/http.dart' as http;
 import 'package:resplash/data/models/photo.dart';
 import 'package:resplash/data/repositories/photo_repository.dart';
 import 'package:resplash/data/sources/photo_data_source.dart';
@@ -7,8 +5,7 @@ import 'package:resplash/data/sources/photo_data_source.dart';
 class PhotoRepositoryImpl implements PhotoRepository {
   final PhotoDataSource _photoDataSource;
 
-  PhotoRepositoryImpl({required PhotoDataSource photoDataSource}) 
-      : _photoDataSource = photoDataSource;
+  PhotoRepositoryImpl({required PhotoDataSource photoDataSource}) : _photoDataSource = photoDataSource;
 
   @override
   Future<List<Photo>> getPhotos({
@@ -26,9 +23,10 @@ class PhotoRepositoryImpl implements PhotoRepository {
       if (data is List) {
         return data.map((json) => Photo.fromJson(json)).toList();
       }
-      
+
       return [];
-    } catch (e) {
+    } catch (e, stack) {
+      print(stack);
       throw Exception('Failed to load photos: $e');
     }
   }
@@ -64,7 +62,7 @@ class PhotoRepositoryImpl implements PhotoRepository {
         // If a single random photo is returned (not in an array)
         return [Photo.fromJson(data)];
       }
-      
+
       return [];
     } catch (e) {
       throw Exception('Failed to load random photos: $e');
@@ -96,7 +94,7 @@ class PhotoRepositoryImpl implements PhotoRepository {
         final List<dynamic> results = data['results'];
         return results.map((json) => Photo.fromJson(json)).toList();
       }
-      
+
       return [];
     } catch (e) {
       throw Exception('Failed to search photos: $e');
@@ -128,4 +126,4 @@ class PhotoRepositoryImpl implements PhotoRepository {
       throw Exception('Failed to track photo download: $e');
     }
   }
-} 
+}

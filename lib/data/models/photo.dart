@@ -55,8 +55,7 @@ class UserProfileImage with _$UserProfileImage {
     required String large,
   }) = _UserProfileImage;
 
-  factory UserProfileImage.fromJson(Map<String, dynamic> json) =>
-      _$UserProfileImageFromJson(json);
+  factory UserProfileImage.fromJson(Map<String, dynamic> json) => _$UserProfileImageFromJson(json);
 }
 
 @freezed
@@ -69,8 +68,7 @@ class UserLinks with _$UserLinks {
     required String portfolio,
   }) = _UserLinks;
 
-  factory UserLinks.fromJson(Map<String, dynamic> json) =>
-      _$UserLinksFromJson(json);
+  factory UserLinks.fromJson(Map<String, dynamic> json) => _$UserLinksFromJson(json);
 }
 
 @freezed
@@ -83,8 +81,7 @@ class PhotoUrls with _$PhotoUrls {
     required String thumb,
   }) = _PhotoUrls;
 
-  factory PhotoUrls.fromJson(Map<String, dynamic> json) =>
-      _$PhotoUrlsFromJson(json);
+  factory PhotoUrls.fromJson(Map<String, dynamic> json) => _$PhotoUrlsFromJson(json);
 }
 
 @freezed
@@ -96,8 +93,7 @@ class PhotoLinks with _$PhotoLinks {
     required String downloadLocation,
   }) = _PhotoLinks;
 
-  factory PhotoLinks.fromJson(Map<String, dynamic> json) =>
-      _$PhotoLinksFromJson(json);
+  factory PhotoLinks.fromJson(Map<String, dynamic> json) => _$PhotoLinksFromJson(json);
 }
 
 @freezed
@@ -120,8 +116,7 @@ class Collection with _$Collection {
     required User user,
   }) = _Collection;
 
-  factory Collection.fromJson(Map<String, dynamic> json) =>
-      _$CollectionFromJson(json);
+  factory Collection.fromJson(Map<String, dynamic> json) => _$CollectionFromJson(json);
 }
 
 @freezed
@@ -132,6 +127,5 @@ class CollectionMeta with _$CollectionMeta {
     required String index,
   }) = _CollectionMeta;
 
-  factory CollectionMeta.fromJson(Map<String, dynamic> json) =>
-      _$CollectionMetaFromJson(json);
-} 
+  factory CollectionMeta.fromJson(Map<String, dynamic> json) => _$CollectionMetaFromJson(json);
+}
