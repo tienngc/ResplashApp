@@ -33,8 +33,24 @@ class MainBottomAppBar extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Row(children: [IconButton(onPressed: () {}, icon: Icon(Icons.menu_outlined))]),
-                    Row(children: [IconButton(onPressed: () {}, icon: Icon(Icons.search)), IconButton(onPressed: () {}, icon: Icon(Icons.sort))]),
+                    Row(
+                      children: [
+                        IconButton(
+                          onPressed: () {},
+                          icon: Icon(Icons.menu_outlined),
+                        ),
+                      ],
+                    ),
+                    Row(children: [
+                      IconButton(
+                        onPressed: () {},
+                        icon: Icon(Icons.search),
+                      ),
+                      IconButton(
+                        onPressed: () {},
+                        icon: Icon(Icons.sort),
+                      ),
+                    ]),
                   ],
                 ),
               ),

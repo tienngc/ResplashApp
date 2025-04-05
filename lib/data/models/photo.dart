@@ -7,23 +7,42 @@ part 'photo.g.dart';
 class Photo with _$Photo {
   const factory Photo({
     required String id,
-    required String createdAt,
-    required String updatedAt,
     required int width,
     required int height,
     required String color,
-    required String blurHash,
-    required int downloads,
-    required int likes,
-    required bool likedByUser,
-    String? description,
-    required User user,
     required PhotoUrls urls,
     required PhotoLinks links,
-    @Default([]) List<Collection> currentUserCollections,
+    @Default(0) int likes,
+    required User user,
   }) = _Photo;
 
   factory Photo.fromJson(Map<String, dynamic> json) => _$PhotoFromJson(json);
+}
+
+@freezed
+class PhotoUrls with _$PhotoUrls {
+  const factory PhotoUrls({
+    required String raw,
+    required String full,
+    required String regular,
+    required String small,
+    required String thumb,
+    @JsonKey(name: 'small_s3') String? smallS3,
+  }) = _PhotoUrls;
+
+  factory PhotoUrls.fromJson(Map<String, dynamic> json) => _$PhotoUrlsFromJson(json);
+}
+
+@freezed
+class PhotoLinks with _$PhotoLinks {
+  const factory PhotoLinks({
+    required String self,
+    required String html,
+    required String download,
+    @JsonKey(name: 'download_location') required String downloadLocation,
+  }) = _PhotoLinks;
+
+  factory PhotoLinks.fromJson(Map<String, dynamic> json) => _$PhotoLinksFromJson(json);
 }
 
 @freezed
@@ -32,30 +51,27 @@ class User with _$User {
     required String id,
     required String username,
     required String name,
-    String? portfolioUrl,
+    @JsonKey(name: 'first_name') String? firstName,
+    @JsonKey(name: 'last_name') String? lastName,
+    @JsonKey(name: 'twitter_username') String? twitterUsername,
+    @JsonKey(name: 'portfolio_url') String? portfolioUrl,
     String? bio,
     String? location,
-    required int totalLikes,
-    required int totalPhotos,
-    required int totalCollections,
-    String? instagramUsername,
-    String? twitterUsername,
-    required UserProfileImage profileImage,
     required UserLinks links,
+    @JsonKey(name: 'profile_image') required UserProfileImage profileImage,
+    @JsonKey(name: 'instagram_username') String? instagramUsername,
+    @JsonKey(name: 'total_collections') @Default(0) int totalCollections,
+    @JsonKey(name: 'total_likes') @Default(0) int totalLikes,
+    @JsonKey(name: 'total_photos') @Default(0) int totalPhotos,
+    @JsonKey(name: 'total_promoted_photos') @Default(0) int totalPromotedPhotos,
+    @JsonKey(name: 'total_illustrations') @Default(0) int totalIllustrations,
+    @JsonKey(name: 'total_promoted_illustrations') @Default(0) int totalPromotedIllustrations,
+    @JsonKey(name: 'accepted_tos') @Default(false) bool acceptedTos,
+    @JsonKey(name: 'for_hire') @Default(false) bool forHire,
+    UserSocial? social,
   }) = _User;
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
-}
-
-@freezed
-class UserProfileImage with _$UserProfileImage {
-  const factory UserProfileImage({
-    required String small,
-    required String medium,
-    required String large,
-  }) = _UserProfileImage;
-
-  factory UserProfileImage.fromJson(Map<String, dynamic> json) => _$UserProfileImageFromJson(json);
 }
 
 @freezed
@@ -72,60 +88,24 @@ class UserLinks with _$UserLinks {
 }
 
 @freezed
-class PhotoUrls with _$PhotoUrls {
-  const factory PhotoUrls({
-    required String raw,
-    required String full,
-    required String regular,
+class UserProfileImage with _$UserProfileImage {
+  const factory UserProfileImage({
     required String small,
-    required String thumb,
-  }) = _PhotoUrls;
+    required String medium,
+    required String large,
+  }) = _UserProfileImage;
 
-  factory PhotoUrls.fromJson(Map<String, dynamic> json) => _$PhotoUrlsFromJson(json);
+  factory UserProfileImage.fromJson(Map<String, dynamic> json) => _$UserProfileImageFromJson(json);
 }
 
 @freezed
-class PhotoLinks with _$PhotoLinks {
-  const factory PhotoLinks({
-    required String self,
-    required String html,
-    required String download,
-    required String downloadLocation,
-  }) = _PhotoLinks;
+class UserSocial with _$UserSocial {
+  const factory UserSocial({
+    @JsonKey(name: 'instagram_username') String? instagramUsername,
+    @JsonKey(name: 'portfolio_url') String? portfolioUrl,
+    @JsonKey(name: 'twitter_username') String? twitterUsername,
+    @JsonKey(name: 'paypal_email') String? paypalEmail,
+  }) = _UserSocial;
 
-  factory PhotoLinks.fromJson(Map<String, dynamic> json) => _$PhotoLinksFromJson(json);
-}
-
-@freezed
-class Collection with _$Collection {
-  const factory Collection({
-    required int id,
-    required String title,
-    required String publishedAt,
-    required String lastCollectedAt,
-    required String updatedAt,
-    required bool featured,
-    required int totalPhotos,
-    required bool private,
-    required String shareKey,
-    required List<String> tags,
-    required CollectionMeta meta,
-    required String description,
-    required String coverPhoto,
-    required List<String> previewPhotos,
-    required User user,
-  }) = _Collection;
-
-  factory Collection.fromJson(Map<String, dynamic> json) => _$CollectionFromJson(json);
-}
-
-@freezed
-class CollectionMeta with _$CollectionMeta {
-  const factory CollectionMeta({
-    required String title,
-    required String description,
-    required String index,
-  }) = _CollectionMeta;
-
-  factory CollectionMeta.fromJson(Map<String, dynamic> json) => _$CollectionMetaFromJson(json);
+  factory UserSocial.fromJson(Map<String, dynamic> json) => _$UserSocialFromJson(json);
 }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:resplash/screens/collections/collections_tab.dart';
-import 'package:resplash/screens/home/home_tab.dart';
+import 'package:resplash/screens/tabview/photo/photo_tab_view.dart';
 
 enum TabLayoutStyle { home, collection }
 
@@ -39,20 +38,23 @@ class _TabLayoutState extends State<TabLayout> with SingleTickerProviderStateMix
       child: Stack(
         children: [
           Padding(
-            padding: const EdgeInsets.only(top: 64),
+            padding: const EdgeInsets.only(top: 16),
             child: TabBarView(
               controller: tabController,
               children: const [
                 HomeTab(),
-                CollectionsTab(),
+                Text("Collections"),
               ],
             ),
           ),
-          TabBar(
-            tabs: _homeTabs,
-            controller: tabController,
-            dividerHeight: 0,
-            indicatorSize: TabBarIndicatorSize.tab,
+          Container(
+            color: Theme.of(context).scaffoldBackgroundColor,
+            child: TabBar(
+              tabs: _homeTabs,
+              controller: tabController,
+              dividerHeight: 0,
+              indicatorSize: TabBarIndicatorSize.tab,
+            ),
           ),
         ],
       ),

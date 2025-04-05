@@ -29,13 +29,13 @@ class PhotoBloc extends Bloc<PhotoEvent, PhotoState> {
     try {
       final photos = await _photoRepository.getPhotos(
         page: 1,
-        perPage: 20,
-        orderBy: 'latest',
+        perPage: 30,
+        // orderBy: 'latest',
       );
 
       emit(PhotoState.loaded(
         photos: photos,
-        hasReachedMax: photos.length < 20,
+        hasReachedMax: photos.length < 30,
         page: 1,
       ));
     } catch (e, stack) {
@@ -53,13 +53,13 @@ class PhotoBloc extends Bloc<PhotoEvent, PhotoState> {
     try {
       final photos = await _photoRepository.getPhotos(
         page: 1,
-        perPage: 20,
-        orderBy: 'latest',
+        perPage: 30,
+        // orderBy: 'latest',
       );
 
       emit(PhotoState.loaded(
         photos: photos,
-        hasReachedMax: photos.length < 20,
+        hasReachedMax: photos.length < 30,
         page: 1,
       ));
     } catch (e, stack) {
@@ -83,8 +83,8 @@ class PhotoBloc extends Bloc<PhotoEvent, PhotoState> {
       final nextPage = currentState.page + 1;
       final morePhotos = await _photoRepository.getPhotos(
         page: nextPage,
-        perPage: 20,
-        orderBy: 'latest',
+        perPage: 30,
+        // orderBy: 'latest',
       );
 
       if (morePhotos.isEmpty) {
@@ -95,7 +95,7 @@ class PhotoBloc extends Bloc<PhotoEvent, PhotoState> {
       } else {
         emit(PhotoState.loaded(
           photos: [...currentState.photos, ...morePhotos],
-          hasReachedMax: morePhotos.length < 20,
+          hasReachedMax: morePhotos.length < 30,
           page: nextPage,
           isLoading: false,
         ));
